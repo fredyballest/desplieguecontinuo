@@ -7,3 +7,10 @@ before_install:
 
 script:
   - docker run fredyball/django-client python manage.py test
+
+after_success:
+
+  - docker build -t fredyball/django-nginx ./nginx  
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push fredyball/django-client
+  - docker push fredyball/django-nginx
