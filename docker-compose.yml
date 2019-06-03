@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx:
+    container_name: ng01
+    build:
+      context: nginx
+    ports:
+      - "80:80"
+  web:
+    build:
+      context: prodjango
+    container_name: dg01
+    expose:
+      - "8000"

@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t fredyball/django-client ./prodjango
+
+script:
+  - docker run fredyball/django-client python manage.py test
