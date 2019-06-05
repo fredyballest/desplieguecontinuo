@@ -1,8 +1,8 @@
 if [ "$TRAVIS_BRANCH" != "dev" ]; then 
     exit 0;
 fi
-export GIT_COMMITTER_EMAIL="ramondelemos@gmail.com"
-export GIT_COMMITTER_NAME="Ramon de Lemos"
+export GIT_COMMITTER_EMAIL="fredy.ballesteros@gmail.com"
+export GIT_COMMITTER_NAME="Fredy Ballesteros"
 rev=$(git rev-parse --short HEAD)
 git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* || exit
 git fetch --all || exit
